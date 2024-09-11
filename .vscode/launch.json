@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach to gdbserver",
+            "type": "cppdbg",
+            "request": "launch",
+            "MIMode": "gdb",
+            "miDebuggerServerAddress": ":2345",
+            "program": "/workspaces/bsim-demo/gatt-bug/central/build/zephyr/zephyr.exe",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "linux": {
+                "MIMode": "gdb"
+            }
+        }
+    ]
+}

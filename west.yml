@@ -1,0 +1,11 @@
+manifest:
+  projects:
+    - name: zephyr
+      url: https://github.com/zephyrproject-rtos/zephyr
+      revision: 632d6b9416c1c1813f3304ef29a6eda7954af3c3
+      import:
+        name-allowlist:
+          - bsim
+          - hal_nordic
+          - tinycrypt
+          - nrf_hw_models

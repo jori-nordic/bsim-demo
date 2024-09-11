@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run gatt-bug simulation",
+            "type": "shell",
+            "command": "${workspaceFolder}/gatt-bug/run.sh",
+            "group": {
+                "kind": "build",
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Debug gatt-bug simulation",
+            "type": "shell",
+            "command": "${workspaceFolder}/gatt-bug/debug.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Kill bsim simulations",
+            "type": "shell",
+            "command": "USER=user /opt/bsim/components/common/stop_bsim.sh && pkill gdbserver",
+            "group": {
+                "kind": "build"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
