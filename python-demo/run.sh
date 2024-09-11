@@ -47,8 +47,17 @@ pushd "${BSIM_COMPONENTS_PATH}/device_handbrake"
 
 echo "Starting simulation"
 
+current_dir=$(pwd)
+
+# Dump the packet trace when we stop (Ctrl-C) simulation
+trap 'cleanup' INT
+
+cleanup() {
+    "${BSIM_OUT_PATH}"/components/ext_2G4_phy_v1/dump_post_process/csv2pcap \
+        -o ${this_dir}/trace.pcap \
+        "${BSIM_OUT_PATH}"/results/python-id/d_2G4*.Tx.csv
+}
+
 # Start the PHY
 pushd "${BSIM_OUT_PATH}/bin"
-./bs_2G4_phy_v1 -s=python-id -D=3
-
-"${BSIM_OUT_PATH}"/components/ext_2G4_phy_v1/dump_post_process/csv2pcap -o mytrace.pcap "${BSIM_OUT_PATH}"/results/notify_multiple/d_2G4*.Tx.csv
+./bs_2G4_phy_v1 -s=python-id -D=3 -dump_imm
