@@ -75,7 +75,6 @@ static uint8_t discover_func(struct bt_conn *conn,
 		memcpy(&discover_uuid, BT_UUID_GATT_CCC, sizeof(discover_uuid));
 		discover_params.uuid = &discover_uuid.uuid;
 		discover_params.start_handle = attr->handle + 2;
-		discover_params.type = BT_GATT_DISCOVER_DESCRIPTOR;
 		subscribe_params.value_handle = bt_gatt_attr_value_handle(attr);
 
 		err = bt_gatt_discover(conn, &discover_params);
