@@ -1,6 +1,7 @@
 # BSIM Demo
 
-This repo showcases how you can use Babblesim to develop Bluetooth applications.
+This repo showcases how you can use [Babblesim](https://babblesim.github.io/) to
+develop Bluetooth applications.
 
 There are two demos:
 
@@ -58,3 +59,13 @@ traffic immediately, without expensive equipment.
 
 The packet trace will be exported to `python-demo/trace.pcap` and you can open
 it in Wireshark.
+
+## I don't want to use VSCode
+
+No worries!
+Follow the Zephyr ["getting started" guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) and the [nrf52_bsim building guide](https://docs.zephyrproject.org/latest/boards/native/nrf_bsim/doc/nrf52_bsim.html#building-and-running) and you should be running Babblesim locally in no time.
+
+## More cool demos
+
+You can leverage a whole bunch of native tools to debug Babblesim programs.
+A good one is the [RR time-travelling debugger](https://jonathan.rico.live/blog/2024-04-24/).
