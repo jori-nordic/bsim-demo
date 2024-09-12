@@ -1,6 +1,6 @@
 {
-    "name": "Bluetooth 💘 babblesim 💯",
-    "build": {"dockerfile": "Dockerfile"},
+    "name": "Bluetooth 💘 babblesim",
+    "image": "ghcr.io/jori-nordic/zephyr-bsim-cache:2024-09-12",
 
     "containerEnv": {
         "HISTCONTROL": "ignoredups:erasedups",

@@ -21,7 +21,7 @@ sudo chown user:user /workspaces
 # Set up west workspace.
 west init -l /workspaces/bsim-demo
 west config --global update.narrow true
-west update
+west update --path-cache /workspace-cache
 
 # Reset every project except the main zephyr repo.
 #
