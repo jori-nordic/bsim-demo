@@ -63,7 +63,11 @@ it in Wireshark.
 ## I don't want to use VSCode
 
 No worries!
+
 Follow the Zephyr ["getting started" guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) and the [nrf52_bsim building guide](https://docs.zephyrproject.org/latest/boards/native/nrf_bsim/doc/nrf52_bsim.html#building-and-running) and you should be running Babblesim locally in no time.
+
+The only difference is the `west init` command: replace it with:
+`west init -m https://github.com/jori-nordic/bsim-demo`
 
 ## More cool demos
 
