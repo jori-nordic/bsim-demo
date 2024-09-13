@@ -28,6 +28,7 @@ on hardware.
 - Click "Run" -> "Start debugging"
 - Use the debugger to step through code
 - Simulation output is in the `sim.log` file
+- Click the `trace.pcap` file to open a packet dump
 
 ## Python demo
 

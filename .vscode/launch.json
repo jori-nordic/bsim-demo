@@ -11,7 +11,7 @@
             "cwd": "${workspaceFolder}",
             "externalConsole": true,
             "preLaunchTask": "Debug gatt-bug simulation",
-            "postDebugTask": "Kill bsim simulations",
+            "postDebugTask": "Kill sim & dump pcap",
             "linux": {
                 "MIMode": "gdb"
             }

@@ -89,6 +89,9 @@ RUN sudo -E -- bash -c ' \
 COPY scripts/west-cache.sh /west-cache.sh
 RUN /west-cache.sh && sudo rm -rf /west-cache.sh
 
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+	tshark
+
 ENV ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 # Link to GH repo
