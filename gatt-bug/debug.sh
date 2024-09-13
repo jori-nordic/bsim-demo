@@ -3,17 +3,8 @@
 # We don't want to execute if we have a build error
 set -eu
 
-# Build central image
-pushd $(west topdir)/bsim-demo/gatt-bug/central
-west build -b nrf52_bsim
-central="$(pwd)/build/zephyr/zephyr.exe"
-popd
-
-# Build peripheral image
-pushd $(west topdir)/bsim-demo/gatt-bug/peripheral
-west build -b nrf52_bsim
-peripheral="$(pwd)/build/zephyr/zephyr.exe"
-popd
+central="$(west topdir)/bsim-demo/gatt-bug/central/build/zephyr/zephyr.exe"
+peripheral="$(west topdir)/bsim-demo/gatt-bug/peripheral/build/zephyr/zephyr.exe"
 
 echo "Start PHY"
 # Start the PHY
@@ -30,4 +21,7 @@ echo "Start peripheral"
 $peripheral -s=my-sim-id -d=1 &
 
 echo "Start debug server on central device"
-gdbserver :2345 $central -s=my-sim-id -d=0
+gdbserver :2345 $central -s=my-sim-id -d=0 &
+
+# Give some time for server to start up
+sleep 0.5

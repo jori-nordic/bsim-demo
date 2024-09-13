@@ -2,11 +2,25 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build gatt-bug image",
+            "type": "shell",
+            "command": "${workspaceFolder}/gatt-bug/build.sh",
+            "group": {
+                "kind": "build"
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Run gatt-bug simulation",
             "type": "shell",
             "command": "${workspaceFolder}/gatt-bug/run.sh",
+            "dependsOn": ["Build gatt-bug image"],
             "group": {
                 "kind": "build",
+                "isDefault": true
             },
             "presentation": {
                 "reveal": "always",
@@ -17,10 +31,11 @@
         {
             "label": "Debug gatt-bug simulation",
             "type": "shell",
-            "command": "${workspaceFolder}/gatt-bug/debug.sh",
+            "command": "bash",
+            "args": ["-c", "nohup ${workspaceFolder}/gatt-bug/debug.sh > sim.log"],
+            "dependsOn": ["Build gatt-bug image"],
             "group": {
-                "kind": "build",
-                "isDefault": true
+                "kind": "build"
             },
             "presentation": {
                 "reveal": "always",

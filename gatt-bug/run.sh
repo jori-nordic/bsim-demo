@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-# We don't want to execute if we have a build error
 set -eu
 
-# Build central image
 pushd $(west topdir)/bsim-demo/gatt-bug/central
-west build -b nrf52_bsim
 central="$(pwd)/build/zephyr/zephyr.exe"
 popd
 
-# Build peripheral image
 pushd $(west topdir)/bsim-demo/gatt-bug/peripheral
-west build -b nrf52_bsim
 peripheral="$(pwd)/build/zephyr/zephyr.exe"
 popd
 

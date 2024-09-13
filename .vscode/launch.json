@@ -2,14 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to gdbserver",
+            "name": "Debug central device",
             "type": "cppdbg",
             "request": "launch",
             "MIMode": "gdb",
             "miDebuggerServerAddress": ":2345",
-            "program": "/workspaces/bsim-demo/gatt-bug/central/build/zephyr/zephyr.exe",
+            "program": "${workspaceFolder}/gatt-bug/central/build/zephyr/zephyr.exe",
             "cwd": "${workspaceFolder}",
             "externalConsole": true,
+            "preLaunchTask": "Debug gatt-bug simulation",
+            "postDebugTask": "Kill bsim simulations",
             "linux": {
                 "MIMode": "gdb"
             }

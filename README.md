@@ -25,9 +25,9 @@ on hardware.
 
 - Install VSCode + the devcontainer extension
 - Open this repo in VSCode, click "open in container" when the pop-up appears
-- Click "Terminal" -> "Run Build Task"
 - Click "Run" -> "Start debugging"
 - Use the debugger to step through code
+- Simulation output is in the `sim.log` file
 
 ## Python demo
 
